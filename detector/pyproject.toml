@@ -6,9 +6,10 @@ authors = ["Savyan <mrsavyan555@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = ">=3.10,<3.12.0 || >3.12.0,<4.0"
 django = "^5.0.2"
 psycopg2-binary = "^2.9.9"
+slither-analyzer = "^0.10.1"
 
 
 [build-system]

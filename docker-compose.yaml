@@ -4,6 +4,8 @@ services:
     command: python3 manage.py runserver 0.0.0.0:8000
     ports:
       - "8000:8000"
+    volumes:
+      - ./detector/:/detector/
     env_file:
       - ./.env
     depends_on:

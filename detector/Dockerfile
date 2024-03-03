@@ -16,6 +16,9 @@ COPY poetry.lock pyproject.toml /detector/
 RUN poetry config virtualenvs.create false && poetry install
 RUN poetry show
 
+RUN solc-select install 0.4.24
+RUN solc-select use 0.4.24
+
 #RUN .venv/bin/activate
 
 
