@@ -1,1 +1,0 @@
-"# token-standard-detector" 
