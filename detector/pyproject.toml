@@ -10,6 +10,7 @@ python = ">=3.10,<3.12.0 || >3.12.0,<4.0"
 django = "^5.0.2"
 psycopg2-binary = "^2.9.9"
 slither-analyzer = "^0.10.1"
+gunicorn = "^21.2.0"
 
 
 [build-system]

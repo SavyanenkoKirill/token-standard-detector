@@ -1,7 +1,8 @@
 services:
   web:
     build: ./detector
-    command: python3 manage.py runserver 0.0.0.0:8000
+    command: gunicorn detector.wsgi:application --bind 0.0.0.0:8000
+#    command: python3 manage.py runserver 0.0.0.0:8000
     ports:
       - "8000:8000"
     volumes:
@@ -20,6 +21,13 @@ services:
       POSTGRES_USER: ${SQL_USER}
       POSTGRES_PASSWORD: ${SQL_PASSWORD}
       POSTGRES_DB: ${SQL_DATABASE}
-
+  nginx:
+    build: ./nginx
+    volumes:
+      - ./detector/:/detector/
+    ports:
+      - "80:80"
+    depends_on:
+      - web
 volumes:
   postgres_data:
